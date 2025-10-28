@@ -3,5 +3,6 @@ name = "expense-tracking"
 version = "0.1.0"
 dependencies = [
     "fastapi[standard]",
-    "uvicorn"
+    "uvicorn",
+    "sqlmodel"
 ]
