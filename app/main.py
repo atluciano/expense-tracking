@@ -2,7 +2,7 @@ from typing import Union
 from fastapi import FastAPI
 from app.core.db import init_db
 
-from app.domains.accounts.router import router as accounts_router
+from app.domains.category.router import router as category_router
 
 def lifespan(app: FastAPI):
     init_db()
@@ -10,7 +10,7 @@ def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-app.include_router(accounts_router, prefix="/accounts", tags=["Accounts"])
+app.include_router(category_router, prefix="/categories", tags=["Categories"])
 
 @app.get("/")
 def read_root():
